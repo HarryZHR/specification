@@ -6,6 +6,9 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 import java.io.Serializable;
 
+/**
+ * @author Harry.zhang on 2018/11/16
+ */
 @NoRepositoryBean
 public interface BaseRepository<T, ID extends Serializable> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
 

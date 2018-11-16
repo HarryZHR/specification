@@ -1,12 +1,10 @@
 package com.zhr.specification.student;
 
+import com.zhr.specification.classification.Classification;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @DynamicUpdate
@@ -29,5 +27,9 @@ public class Student {
 
     @Column(name = "address")
     private String address;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "class_id")
+    private Classification classification;
 
 }
